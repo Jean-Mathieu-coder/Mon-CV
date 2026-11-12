@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%231C1C1E'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='42' font-weight='800' fill='%23E8634A'>JM</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yawo Jean-Mathieu GOMADO — Comptable, Entrepreneur Web & Inclusion Financière</title>
+    <meta name="description" content="Portfolio et CV en ligne de Yawo Jean-Mathieu GOMADO, Gérant de cabinet d'inclusion financière, Comptable et Entrepreneur Web à Lomé, Togo." />
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Cormorant Garamond, IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-neige text-graphite font-sans antialiased selection:bg-corail selection:text-white overflow-x-hidden">
+    <!-- SVG Noise Overlay (Rule requirement: feTurbulence à 0.05 d'opacité) -->
+    <svg class="pointer-events-none fixed inset-0 z-[9999] h-full w-full opacity-[0.05]" aria-hidden="true">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)" />
+    </svg>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
