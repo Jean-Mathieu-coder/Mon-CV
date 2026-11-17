@@ -234,33 +234,36 @@ export default function App() {
         })
       })
 
-      // 5. Education cards animation
+      // 5. Education cards animation (100% visible garanti : AUCUN opacity: 0 qui bloque l'affichage)
       gsap.from('.education-card', {
         scrollTrigger: {
           trigger: '#formation',
-          start: 'top 80%',
+          start: 'top 92%',
           toggleActions: 'play none none none'
         },
-        y: 35,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out'
+        y: 20,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+        clearProps: 'all'
       })
 
       // 6. Contact animation
       gsap.from('.contact-reveal', {
         scrollTrigger: {
           trigger: '#contact',
-          start: 'top 80%',
+          start: 'top 90%',
           toggleActions: 'play none none none'
         },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
+        y: 25,
+        duration: 0.7,
         stagger: 0.1,
-        ease: 'power3.out'
+        ease: 'power2.out',
+        clearProps: 'all'
       })
+
+      // Recalcul immédiat des positions pour tous les formats d'écrans (mobiles et PC)
+      ScrollTrigger.refresh()
 
     }, mainRef)
 
@@ -994,8 +997,8 @@ export default function App() {
           <div className="space-y-6">
 
             {/* Diplôme 1: Licence en Comptabilité Contrôle Audit */}
-            <div className="education-card p-8 rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-elevated">
-              <div className="flex items-start gap-5">
+            <div className="education-card p-6 sm:p-8 rounded-2rem sm:rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 shadow-elevated">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="p-3.5 rounded-2xl bg-corail/25 text-corail shrink-0 mt-1 border border-corail/30">
                   <GraduationCap size={28} />
                 </div>
@@ -1003,27 +1006,27 @@ export default function App() {
                   <span className="font-mono text-xs text-corail uppercase tracking-widest font-bold block mb-1">
                     Décembre 2023 &bull; Diplôme Universitaire
                   </span>
-                  <h3 className="font-sans font-extrabold text-2xl text-white mb-1.5 tracking-tight">
+                  <h3 className="font-sans font-extrabold text-xl sm:text-2xl text-white mb-1.5 tracking-tight">
                     LICENCE en Comptabilité Contrôle Audit
                   </h3>
-                  <p className="font-sans text-white text-base font-bold">
+                  <p className="font-sans text-white text-sm sm:text-base font-bold">
                     Université de Lomé (FASEG) &bull; Lomé, Togo
                   </p>
-                  <p className="text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
                     Comptabilité générale et des sociétés, contrôle de gestion, audit financier, fiscalité et conformité SYSCOHADA.
                   </p>
                 </div>
               </div>
-              <div className="shrink-0">
-                <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-xs font-bold">
+              <div className="shrink-0 self-start sm:self-auto">
+                <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-xs font-bold inline-block">
                   Licence Obtenue
                 </span>
               </div>
             </div>
 
             {/* Diplôme 2: Baccalauréat Scientifique Série D (LISIBILITÉ MAXIMISÉE) */}
-            <div className="education-card p-8 rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-elevated">
-              <div className="flex items-start gap-5">
+            <div className="education-card p-6 sm:p-8 rounded-2rem sm:rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 shadow-elevated">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="p-3.5 rounded-2xl bg-corail/25 text-corail shrink-0 mt-1 border border-corail/30">
                   <GraduationCap size={28} />
                 </div>
@@ -1031,27 +1034,27 @@ export default function App() {
                   <span className="font-mono text-xs text-corail uppercase tracking-widest font-bold block mb-1">
                     Juillet 2019 &bull; Diplôme d'État Secondaire
                   </span>
-                  <h3 className="font-sans font-extrabold text-2xl text-white mb-1.5 tracking-tight">
+                  <h3 className="font-sans font-extrabold text-xl sm:text-2xl text-white mb-1.5 tracking-tight">
                     BACCALAURÉAT Série D (Scientifique)
                   </h3>
-                  <p className="font-sans text-white text-base font-bold">
+                  <p className="font-sans text-white text-sm sm:text-base font-bold">
                     Lycée Adidogomé 1 &bull; Lomé, Togo
                   </p>
-                  <p className="text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
                     Mathématiques, sciences physiques et naturelles : rigueur de la méthode scientifique, analyse quantitative et esprit logique.
                   </p>
                 </div>
               </div>
-              <div className="shrink-0">
-                <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-xs font-bold">
+              <div className="shrink-0 self-start sm:self-auto">
+                <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-xs font-bold inline-block">
                   Baccalauréat Obtenu
                 </span>
               </div>
             </div>
 
             {/* Formation Continue & Spécialisations */}
-            <div className="education-card p-8 rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-elevated">
-              <div className="flex items-start gap-5">
+            <div className="education-card p-6 sm:p-8 rounded-2rem sm:rounded-2.5rem bg-[#2E323D] border border-white/20 hover:border-corail/60 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 shadow-elevated">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="p-3.5 rounded-2xl bg-corail/25 text-corail shrink-0 mt-1 border border-corail/30">
                   <Sparkles size={28} />
                 </div>
@@ -1059,19 +1062,19 @@ export default function App() {
                   <span className="font-mono text-xs text-corail uppercase tracking-widest font-bold block mb-1">
                     Formation Continue &bull; Veille Permanente
                   </span>
-                  <h3 className="font-sans font-extrabold text-2xl text-white mb-1.5 tracking-tight">
+                  <h3 className="font-sans font-extrabold text-xl sm:text-2xl text-white mb-1.5 tracking-tight">
                     Spécialisations en Logiciels Comptables & Outils IA
                   </h3>
-                  <p className="font-sans text-white text-base font-bold">
+                  <p className="font-sans text-white text-sm sm:text-base font-bold">
                     Sage 100, SAARI, Excel Avancé de Gestion, Multimédia IA & Web
                   </p>
-                  <p className="text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-white/90 mt-2 max-w-lg leading-relaxed font-normal">
                     Perfectionnement continu des pratiques comptables d'entreprise, intégration des technologies d'intelligence artificielle et création numérique.
                   </p>
                 </div>
               </div>
-              <div className="shrink-0">
-                <span className="px-4 py-1.5 rounded-full bg-corail/20 border border-corail/50 text-corail font-mono text-xs font-bold">
+              <div className="shrink-0 self-start sm:self-auto">
+                <span className="px-4 py-1.5 rounded-full bg-corail/20 border border-corail/50 text-corail font-mono text-xs font-bold inline-block">
                   En Cours Continu
                 </span>
               </div>

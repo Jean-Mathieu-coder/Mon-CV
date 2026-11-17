@@ -42,6 +42,12 @@
     transform: scale(1.01);
     box-shadow: 0 25px 50px -12px rgba(28, 28, 30, 0.08);
   }
+
+  /* Guarantee 100% visibility for education & training cards on all devices */
+  .education-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 /* Custom scrollbar */
